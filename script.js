@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     PROJECT FILTER + PAGINATION
+     EXISTING PROJECT FILTER + PAGINATION
+     HOMEPAGE SAFE
   ========================= */
 
   const buttons = document.querySelectorAll('.categories button');
@@ -40,10 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderProjects() {
+    if (!cards.length) return;
+
     const filtered = getFilteredCards();
     const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
 
-    /* ===== HIDE / SHOW PAGINATION ===== */
     if (pagination) {
       pagination.style.display =
         filtered.length > ITEMS_PER_PAGE ? 'flex' : 'none';
@@ -72,24 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-     CATEGORY FILTER
-  ========================= */
-
   buttons.forEach(btn => {
     btn.onclick = () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      currentFilter = btn.dataset.filter.toLowerCase();
+      currentFilter = btn.dataset.filter?.toLowerCase() || 'all';
       currentPage = 1;
       renderProjects();
     };
   });
-
-  /* =========================
-     PAGINATION BUTTONS
-  ========================= */
 
   paginationBtns.forEach(btn => {
     btn.onclick = () => {
@@ -109,6 +103,171 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   renderProjects();
+
+  /* =========================
+     NEW PROJECTS PAGE LOGIC
+     ISOLATED AND SAFE
+  ========================= */
+
+  const projectsPage = document.querySelector('.projects-page');
+
+  if (projectsPage) {
+
+    const projectCards = Array.from(
+      projectsPage.querySelectorAll('.project-card')
+    );
+
+    const categoryBtns = projectsPage.querySelectorAll(
+      '[data-category-filter]'
+    );
+
+    const statusBtns = projectsPage.querySelectorAll(
+      '[data-status-filter]'
+    );
+
+    const contributorSwitch = projectsPage.querySelector(
+      '#filter-contributors'
+    );
+
+    const sortSelect = projectsPage.querySelector(
+      '#projects-sort-select'
+    );
+
+    const projectsPagination = projectsPage.querySelector(
+      '.projects-pagination'
+    );
+
+    const paginationButtons = projectsPagination
+      ? projectsPagination.querySelectorAll('button')
+      : [];
+
+    const PROJECTS_PER_PAGE = 9;
+    let projectsPageIndex = 1;
+    let activeCategory = 'all';
+    let activeStatuses = [];
+    let onlyContributors = false;
+    let sortOrder = 'newest';
+
+    function filterProjects() {
+      let filtered = projectCards.filter(card => {
+
+        if (activeCategory !== 'all') {
+          if (card.dataset.category !== activeCategory) return false;
+        }
+
+        if (activeStatuses.length) {
+          if (!activeStatuses.includes(card.dataset.status)) return false;
+        }
+
+        if (onlyContributors) {
+          if (card.dataset.contributors !== 'yes') return false;
+        }
+
+        return true;
+      });
+
+      if (sortOrder === 'newest') {
+        filtered.sort((a, b) =>
+          new Date(b.dataset.date) - new Date(a.dataset.date)
+        );
+      } else {
+        filtered.sort((a, b) =>
+          new Date(a.dataset.date) - new Date(b.dataset.date)
+        );
+      }
+
+      return filtered;
+    }
+
+    function renderProjectsPage() {
+      const filtered = filterProjects();
+      const totalPages = Math.ceil(filtered.length / PROJECTS_PER_PAGE);
+
+      if (projectsPagination) {
+        projectsPagination.style.display =
+          filtered.length > PROJECTS_PER_PAGE ? 'flex' : 'none';
+      }
+
+      if (projectsPageIndex > totalPages) {
+        projectsPageIndex = totalPages || 1;
+      }
+
+      projectCards.forEach(card => {
+        card.style.display = 'none';
+      });
+
+      const start = (projectsPageIndex - 1) * PROJECTS_PER_PAGE;
+      const end = start + PROJECTS_PER_PAGE;
+
+      filtered.slice(start, end).forEach(card => {
+        card.style.display = 'block';
+      });
+
+      paginationButtons.forEach(btn => btn.classList.remove('active'));
+      paginationButtons.forEach(btn => {
+        if (btn.dataset.page == projectsPageIndex) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    categoryBtns.forEach(btn => {
+      btn.onclick = () => {
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        activeCategory = btn.dataset.categoryFilter;
+        projectsPageIndex = 1;
+        renderProjectsPage();
+      };
+    });
+
+    statusBtns.forEach(btn => {
+      btn.onclick = () => {
+        btn.classList.toggle('active');
+        activeStatuses = Array.from(statusBtns)
+          .filter(b => b.classList.contains('active'))
+          .map(b => b.dataset.statusFilter);
+
+        projectsPageIndex = 1;
+        renderProjectsPage();
+      };
+    });
+
+    if (contributorSwitch) {
+      contributorSwitch.onchange = () => {
+        onlyContributors = contributorSwitch.checked;
+        projectsPageIndex = 1;
+        renderProjectsPage();
+      };
+    }
+
+    if (sortSelect) {
+      sortSelect.onchange = () => {
+        sortOrder = sortSelect.value;
+        renderProjectsPage();
+      };
+    }
+
+    paginationButtons.forEach(btn => {
+      btn.onclick = () => {
+        const filtered = filterProjects();
+        const totalPages = Math.ceil(filtered.length / PROJECTS_PER_PAGE);
+
+        if (btn.dataset.page === 'next' && projectsPageIndex < totalPages) {
+          projectsPageIndex++;
+        } else if (btn.dataset.page === 'prev' && projectsPageIndex > 1) {
+          projectsPageIndex--;
+        } else if (!isNaN(btn.dataset.page)) {
+          projectsPageIndex = Number(btn.dataset.page);
+        }
+
+        renderProjectsPage();
+      };
+    });
+
+    renderProjectsPage();
+  }
 
   /* =========================
      TYPING EFFECT
