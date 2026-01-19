@@ -230,116 +230,21 @@ p, li, span {
 
 
 /* =========================
-   PROJECT DETAIL PAGE
-========================= */
-.project-standard {
-  font-family: 'Inter', sans-serif;
-}
-
-.project-hero {
-  background: #f8f9fb;
-  padding: 4rem 0;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero-subtitle {
-  font-weight: 600;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-.hero-meta span {
-  display: inline-block;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 0.4rem 0.75rem;
-  margin-right: 0.5rem;
-  font-size: 0.85rem;
-  border-radius: 6px;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.project-section {
-  padding: 3.5rem 0;
-}
-
-.project-section.light {
-  background: #fafafa;
-}
-
-.container.narrow {
-  max-width: 820px;
-}
-
-.two-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.clean-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.clean-list li {
-  margin-bottom: 1rem;
-}
-
-.numbered-list li {
-  margin-bottom: 0.75rem;
-}
-
-@media (max-width: 900px) {
-  .hero-grid,
-  .two-column,
-  .detail-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-}
-
-
-/* =========================
-   ANALYST DEN PROJECT SCOPE
-========================= */
-/* =========================
    ANALYST DEN PROJECT PAGE
-   ISOLATED NAMESPACE
+   ISOLATED SCOPE
 ========================= */
 
 .ad-project {
   width: 100%;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .ad-project-hero {
-  background: #f8f9fb;
+  background: #2b2b2b;
+  color: #ffffff;
   padding: 64px 0;
 }
 
@@ -361,28 +266,39 @@ p, li, span {
 
 .ad-project-subtitle {
   font-weight: 600;
-  color: #666;
+  color: #e0e0e0;
   margin-bottom: 20px;
 }
 
 .ad-project-meta span {
   display: inline-block;
   padding: 6px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #555;
   border-radius: 6px;
   margin-right: 8px;
   font-size: 13px;
-  background: #fff;
+  background: #1f1f1f;
+  color: #ffffff;
 }
 
-/* IMAGE */
+/* HERO IMAGE */
+.ad-project-media {
+  max-height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 .ad-project-media img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
+
 .ad-project-section {
   padding: 56px 0;
 }
@@ -397,7 +313,26 @@ p, li, span {
   padding: 0 20px;
 }
 
-/* DETAILS GRID */
+/* =========================
+   OVERVIEW HEADER + DOWNLOAD
+========================= */
+
+.ad-project-overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.project-download {
+  margin-top: 6px;
+}
+
+/* =========================
+   DETAILS GRID
+========================= */
+
 .ad-project-details {
   max-width: 1200px;
   margin: 0 auto;
@@ -417,7 +352,10 @@ p, li, span {
   font-weight: 600;
 }
 
-/* CONTENT GRID */
+/* =========================
+   CONTENT GRID
+========================= */
+
 .ad-project-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -427,7 +365,31 @@ p, li, span {
   gap: 48px;
 }
 
-/* MOBILE */
+/* =========================
+   CONTRIBUTORS LIMIT
+========================= */
+
+.team-grid .team-card {
+  display: none;
+}
+
+.team-grid .team-card:nth-child(-n+3) {
+  display: block;
+}
+
+.team-grid.show-all .team-card {
+  display: block;
+}
+
+.team-toggle {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 900px) {
   .ad-project-wrap,
   .ad-project-details,
