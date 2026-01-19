@@ -89,9 +89,14 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   position: relative;
   max-width: calc((220px * 4) + (32px * 3)); /* exactly 4 cards */
   margin: 0 auto;
-  overflow: hidden; /* hides half cards */
   display: flex;
   align-items: center;
+}
+
+/* MASK hides half cards, NOT arrows */
+.team-carousel-mask {
+  overflow: hidden;
+  width: 100%;
 }
 
 /* ===== CAROUSEL ===== */
@@ -177,7 +182,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 5;
 }
 
 .team-nav.prev {
@@ -188,18 +193,21 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   right: -56px;
 }
 
-/* ===== MOBILE BEHAVIOR ===== */
+/* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
   .team-carousel-wrapper {
     max-width: 100%;
-    overflow: visible;
   }
 
   .team-carousel {
     flex-wrap: wrap;
     justify-content: center;
     transform: none !important;
+  }
+
+  .team-carousel-mask {
+    overflow: visible;
   }
 
   .team-nav {
