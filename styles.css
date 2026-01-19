@@ -401,3 +401,39 @@ p, li, span {
     padding: 48px 0;
   }
 }
+
+
+/* =========================
+   HERO CTA + COUNTDOWN
+========================= */
+
+.ad-project-cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.ad-project-countdown {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.countdown-label {
+  margin-right: 6px;
+  opacity: 0.85;
+}
+
+#countdown-timer {
+  font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .ad-project-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
