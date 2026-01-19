@@ -125,6 +125,36 @@ p, li, span {
 .card-img{aspect-ratio:4/3;max-height:220px}
 }
 
+/* =========================
+   PAGINATION SECTION
+========================= */
+
+.pagination-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.pagination {
+  display: flex;
+  gap: 14px;
+}
+
+.pagination button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #000;
+  color: #fff;
+}
 
 
 
