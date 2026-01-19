@@ -112,19 +112,36 @@ document.addEventListener("DOMContentLoaded", typeText);
 
 
 
+/* ===== TEAM CAROUSEL (ABOUT PAGE ONLY) ===== */
 
-/* ===== TEAM CAROUSEL ===== */
 const teamCarousel = document.querySelector('.team-carousel');
 const prevBtn = document.querySelector('.team-nav.prev');
 const nextBtn = document.querySelector('.team-nav.next');
 
 if (teamCarousel && prevBtn && nextBtn) {
-  prevBtn.onclick = () => {
-    teamCarousel.scrollBy({ left: -260, behavior: 'smooth' });
-  };
+  const cards = teamCarousel.querySelectorAll('.team-card');
+  const cardWidth = 220 + 32; // card width + gap
+  const visibleCards = 4;
+  const maxIndex = cards.length - visibleCards;
 
-  nextBtn.onclick = () => {
-    teamCarousel.scrollBy({ left: 260, behavior: 'smooth' });
-  };
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    teamCarousel.style.transform =
+      `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
 }
-
