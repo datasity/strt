@@ -82,20 +82,24 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   margin-bottom: 40px;
 }
 
-/* ===== GRID LAYOUT ===== */
+/* ===== TEAM GRID ===== */
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr)); /* FORCE 6 in a row */
-  gap: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
+.team-carousel-wrapper {
+  width: 100%;
 }
 
-/* ===== CARD ===== */
+.team-carousel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 32px;
+  justify-items: center;
+}
+
+/* ===== TEAM CARD ===== */
 
 .team-card {
   text-align: center;
+  max-width: 200px;
 }
 
 /* ===== PHOTO ===== */
@@ -126,9 +130,10 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   align-items: center;
   justify-content: center;
   padding: 14px;
-  font-size: 14px;
+  text-align: center;
   opacity: 0;
   transition: opacity 0.25s ease;
+  font-size: 14px;
 }
 
 .team-photo:hover .team-hover {
@@ -139,30 +144,26 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-card h4 {
   margin: 8px 0 2px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .team-card span {
-  font-size: 13px;
+  font-size: 14px;
   color: #555;
 }
 
 /* ===== RESPONSIVE ===== */
 
-@media (max-width: 1200px) {
-  .team-grid {
+/* Tablet */
+@media (max-width: 1023px) {
+  .team-carousel {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .team-grid {
+/* Mobile */
+@media (max-width: 767px) {
+  .team-carousel {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: 1fr;
   }
 }
