@@ -40,121 +40,6 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   min-height: 360px;
 }
 
-/* ===== TEAM SECTION ===== */
-
-.team-section {
-  margin: 80px 0;
-}
-
-.team-section h2 {
-  margin-bottom: 24px;
-}
-
-/* Wrapper */
-.team-carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-/* Carousel */
-.team-carousel {
-  display: flex;
-  gap: 32px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 4px;
-}
-
-.team-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* Card */
-.team-card {
-  min-width: 220px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-/* Photo */
-.team-photo {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 12px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.team-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Hover overlay */
-.team-hover {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  font-size: 14px;
-}
-
-.team-photo:hover .team-hover {
-  opacity: 1;
-}
-
-/* Name & role */
-.team-card h4 {
-  margin: 8px 0 2px;
-  font-size: 16px;
-}
-
-.team-card span {
-  font-size: 14px;
-  color: #555;
-}
-
-/* Navigation arrows */
-.team-nav {
-  background: #000;
-  color: #fff;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.team-nav.prev {
-  margin-right: 12px;
-}
-
-.team-nav.next {
-  margin-left: 12px;
-}
-
-/* Mobile behavior */
-@media (max-width: 768px) {
-  .team-nav {
-    display: none;
-  }
-
-  .team-card {
-    min-width: 200px;
-  }
-}
-
 
 
 
@@ -184,4 +69,143 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 .hero-image{display:none}
 .project-grid{grid-template-columns:1fr}
 .card-img{aspect-ratio:4/3;max-height:220px}
+}
+
+
+
+/* ===== TEAM SECTION ===== */
+
+.team-section {
+  margin: 80px 0;
+  text-align: center;
+}
+
+.team-section h2 {
+  margin-bottom: 32px;
+}
+
+/* ===== WRAPPER ===== */
+
+.team-carousel-wrapper {
+  position: relative;
+  max-width: calc((220px * 4) + (32px * 3)); /* exactly 4 cards */
+  margin: 0 auto;
+  overflow: hidden; /* prevents half cards */
+  display: flex;
+  align-items: center;
+}
+
+/* ===== CAROUSEL ===== */
+
+.team-carousel {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+/* ===== CARD ===== */
+
+.team-card {
+  flex: 0 0 220px; /* fixed width for clean math */
+  text-align: center;
+}
+
+/* ===== PHOTO ===== */
+
+.team-photo {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== HOVER OVERLAY ===== */
+
+.team-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  font-size: 14px;
+}
+
+.team-photo:hover .team-hover {
+  opacity: 1;
+}
+
+/* ===== NAME & ROLE ===== */
+
+.team-card h4 {
+  margin: 8px 0 2px;
+  font-size: 16px;
+}
+
+.team-card span {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== NAVIGATION ARROWS ===== */
+
+.team-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.team-nav.prev {
+  left: -52px;
+}
+
+.team-nav.next {
+  right: -52px;
+}
+
+/* ===== MOBILE BEHAVIOR ===== */
+
+@media (max-width: 768px) {
+  .team-carousel-wrapper {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .team-carousel {
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: none !important;
+  }
+
+  .team-nav {
+    display: none;
+  }
+
+  .team-card {
+    flex: 0 0 200px;
+    margin-bottom: 32px;
+  }
 }
