@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Analyst Den</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-row">
+
+    <!-- Logo → Home -->
+    <a href="index.html">
+      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den Logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="p11.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="p11.html">Publications</a>
+      <a href="p11.html">Get Involved</a>
+      <a href="p11.html">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="p11.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="p11.html">Publications</a>
+  <a href="p11.html">Get Involved</a>
+  <a href="p11.html">Contact</a>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<main class="container">
+
+  <!-- Intro -->
+  <header class="page-header">
+    <h1>About Analyst Den</h1>
+    <p>
+      Analyst Den is a data and analytics hub focused on turning raw data into insight
+      that drives better decisions.
+    </p>
+  </header>
+
+  <!-- Who We Are -->
+  <section class="content-section">
+    <h2>Who We Are</h2>
+    <p>
+      Analyst Den works at the intersection of data analysis, research, and storytelling.
+      We help organisations, institutions, and communities understand what their data
+      is really saying.
+    </p>
+    <p>
+      We believe data should not live in spreadsheets alone. It should inform policy,
+      guide strategy, and create measurable impact.
+    </p>
+  </section>
+
+  <!-- What We Do -->
+  <section class="content-section">
+    <h2>What We Do</h2>
+    <p>
+      We design and deliver end to end analytics solutions, from data collection and
+      cleaning to analysis, visualisation, and insight communication.
+    </p>
+    <ul>
+      <li>Public sector and policy research</li>
+      <li>Business intelligence and dashboards</li>
+      <li>Economic and market analysis</li>
+      <li>Community focused data projects</li>
+    </ul>
+    <p>
+      Whether it is surveys, dashboards, reports, or deep analytical studies,
+      we focus on clarity, accuracy, and relevance.
+    </p>
+  </section>
+
+  <!-- How We Work -->
+  <section class="content-section">
+    <h2>How We Work</h2>
+    <p>
+      Our approach is practical and evidence based. We engage directly with stakeholders,
+      validate findings through field research when needed, and communicate results in a
+      way that decision makers can act on.
+    </p>
+    <p>
+      We value transparency, methodological rigor, and real world application over buzzwords.
+    </p>
+  </section>
+
+  <!-- Why Analyst Den -->
+  <section class="content-section">
+    <h2>Why Analyst Den</h2>
+    <p>
+      Too much data analysis stops at charts. We go further by explaining the story behind
+      the numbers and what should be done next.
+    </p>
+    <p>
+      Our work is designed to be trusted, published, and used.
+      From small teams to large institutions, we help clients move from data to decisions.
+    </p>
+  </section>
+
+  <!-- Vision -->
+  <section class="content-section">
+    <h2>Our Vision</h2>
+    <p>
+      To be a trusted analytics partner known for credible research, practical insights,
+      and data driven impact across Africa and beyond.
+    </p>
+  </section>
+
+  <!-- Team -->
+  <section class="content-section">
+    <h2>Our Team</h2>
+
+    <div class="contributors-list">
+      <figure class="contributor">
+        <img src="assets/avatars/avatar-1.png" alt="Team member">
+        <figcaption>Lead Analyst</figcaption>
+      </figure>
+
+      <figure class="contributor">
+        <img src="assets/avatars/avatar-2.png" alt="Team member">
+        <figcaption>Research Lead</figcaption>
+      </figure>
+
+      <figure class="contributor">
+        <img src="assets/avatars/avatar-3.png" alt="Team member">
+        <figcaption>Data Engineer</figcaption>
+      </figure>
+
+      <figure class="contributor">
+        <img src="assets/avatars/avatar-4.png" alt="Team member">
+        <figcaption>Insights & Storytelling</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="content-section">
+    <a href="p11.html" class="btn primary">View Projects</a>
+    <a href="p11.html" class="btn secondary">Work With Us</a>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p>© 2026 Analyst Den by Datavasity</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
