@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Analysis Dashboard | Analyst Den</title>
+
+  <!-- Fonts (same as rest of site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-row">
+
+    <!-- LOGO → HOME -->
+    <a href="index.html">
+      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den Logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="p11.html">Projects</a>
+      <a href="p11.html">Process</a>
+      <a href="p11.html">Publications</a>
+      <a href="p11.html">Dashboards</a>
+      <a href="p11.html">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="p11.html">Projects</a>
+  <a href="p11.html">Process</a>
+  <a href="p11.html">Publications</a>
+  <a href="p11.html">Dashboards</a>
+  <a href="p11.html">Contact</a>
+</div>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<main class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> /
+    <span>Sales Analysis Dashboard</span>
+  </nav>
+
+  <!-- Page Title -->
+  <header class="project-header">
+    <h1>Sales Analysis Dashboard</h1>
+    <p>
+      Interactive Power BI dashboard providing insights into sales performance,
+      trends, and key business metrics.
+    </p>
+  </header>
+
+  <!-- Power BI Embed -->
+  <section class="dashboard-embed">
+    <iframe
+      title="Sales Analysis"
+      src="https://app.powerbi.com/view?r=eyJrIjoiZTZiMDRjNDktZTBiOS00NzVhLWIyZDMtOGU2NGFkZTQxM2RhIiwidCI6IjBmN2UyZmFlLTc5NzYtNGM4NC05YzYzLWU1ZDkzZTg1ODNkMiJ9"
+      width="100%"
+      height="600"
+      frameborder="0"
+      allowfullscreen="true">
+    </iframe>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p>© 2026 Analyst Den by Datavasity</p>
+</footer>
+
+<!-- Shared JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

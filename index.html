@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyst Den | Turning Data Skills Into Real-World Impact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <!-- LOGO → HOME -->
+    <a href="index.html">
+      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den Logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="p11.html">About</a>
+      <a href="p11.html">Projects</a>
+      <a href="p11.html">Process</a>
+      <a href="p11.html">Publications</a>
+      <a href="p11.html">Get Involved</a>
+      <a href="p11.html">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="p11.html">About</a>
+  <a href="p11.html">Projects</a>
+  <a href="p11.html">Process</a>
+  <a href="p11.html">Publications</a>
+  <a href="p11.html">Get Involved</a>
+  <a href="p11.html">Contact</a>
+</div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Turning Data Skills<br><span id="typing-text"></span></h1>
+      <p>Analyst Den is Datavasity’s applied analytics platform helping analysts move from training to solving real public and business problems.</p>
+
+      <div class="hero-actions">
+        <a href="p11.html" class="btn primary">Explore Analyst Den</a>
+        <a href="p11.html" class="btn secondary">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </div>
+</section>
+
+<section class="projects">
+  <div class="container">
+    <h2>Explore Our Projects</h2>
+
+    <div class="categories">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="public">Education</button>
+      <button data-filter="business">Transportation</button>
+      <button data-filter="community">Health</button>
+      <button data-filter="community">Environment</button>
+      <button data-filter="public">Governancer</button>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- POST 1 -->
+      <div class="project-card" data-category="public" data-page="1">
+        <div class="card-img" style="background-image: url('assets/project-business.png');"></div>
+        <h3>1. Transportation in Abeokuta LGA</h3>
+        <ul>
+          <li>Public transport efficiency</li>
+          <li>Commute time and cost</li>
+          <li>Infrastructure challenges</li>
+        </ul>
+        <a href="pp.html" class="read-more">Read more →</a>
+      </div>
+
+      <!-- POST 2 -->
+      <div class="project-card" data-category="business" data-page="1">
+        <div class="card-img card-business"></div>
+        <h3>2. Small Business Challenges in Ameke TDEA</h3>
+        <ul>
+          <li>Market access barriers</li>
+          <li>Cost of doing business</li>
+          <li>Local policy impact</li>
+        </ul>
+        <a href="pp.html" class="read-more">Read more →</a>
+      </div>
+
+      <!-- POST 3 -->
+      <div class="project-card" data-category="community" data-page="1">
+        <div class="card-img"></div>
+        <h3>3. Sanitation Issues in Ikeja</h3>
+        <ul>
+          <li>Waste disposal access</li>
+          <li>Community health risks</li>
+          <li>Policy gaps</li>
+        </ul>
+        <a href="pp.html" class="read-more">Read more →</a>
+      </div>
+
+      <!-- POST 4 -->
+      <div class="project-card" data-category="public" data-page="2">
+        <div class="card-img" style="background-image: url('assets/project-business.png');"></div>
+        <h3>4. Transportation in Abeokuta LGA</h3>
+        <ul>
+          <li>Public transport efficiency</li>
+          <li>Commute time and cost</li>
+          <li>Infrastructure challenges</li>
+        </ul>
+        <a href="pp.html" class="read-more">Read more →</a>
+      </div>
+
+      <!-- POST 5 -->
+      <div class="project-card" data-category="business" data-page="2">
+        <div class="card-img card-business"></div>
+        <h3>5. Small Business Challenges in Ameke TDEA</h3>
+        <ul>
+          <li>Market access barriers</li>
+          <li>Cost of doing business</li>
+          <li>Local policy impact</li>
+        </ul>
+        <a href="pp.html" class="read-more">Read more →</a>
+      </div>
+
+      <!-- POST 6 -->
+      <div class="project-card" data-category="community" data-page="2">
+        <div class="card-img"></div>
+        <h3>6. Sanitation Issues in Ikeja</h3>
+        <ul>
+          <li>Waste disposal access</li>
+          <li>Community health risks</li>
+          <li>Policy gaps</li>
+        </ul>
+        <a href="pp.html" class="read-more">Read more →</a>
+      </div>
+
+    </div>
+
+    <div class="pagination">
+      <button data-page="prev">‹</button>
+      <button class="active" data-page="1">1</button>
+      <button data-page="2">2</button>
+      <button data-page="next">›</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2026 Analyst Den by Datavasity</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
