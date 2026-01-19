@@ -373,7 +373,7 @@ p, li, span {
   display: none;
 }
 
-.team-grid .team-card:nth-child(-n+3) {
+.team-grid .team-card:nth-child(-n+4) {
   display: block;
 }
 
