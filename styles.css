@@ -107,6 +107,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   justify-items: center;
   justify-content: center;
   padding: 0 24px;
+  overflow: visible;
 }
 
 /* =========================
@@ -115,8 +116,10 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-card {
   text-align: center;
-   outline: 2px solid red;
   max-width: 220px;
+  overflow: visible;
+  /* debug only, remove after testing */
+  outline: 2px solid red;
 }
 
 /* =========================
@@ -139,18 +142,19 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 }
 
 /* =========================
-   HOVER
+   HOVER OVERLAY
 ========================= */
 
 .team-hover {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.65);
-  color: #fff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 14px;
+  text-align: center;
   opacity: 0;
   transition: opacity 0.25s ease;
   font-size: 14px;
@@ -172,7 +176,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-card span {
   font-size: 14px;
-  color: #555;
+  color: #555555;
 }
 
 /* =========================
