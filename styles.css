@@ -72,7 +72,6 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 }
 
 
-
 /* ===== TEAM SECTION ===== */
 
 .team-section {
@@ -90,7 +89,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   position: relative;
   max-width: calc((220px * 4) + (32px * 3)); /* exactly 4 cards */
   margin: 0 auto;
-  overflow: hidden; /* prevents half cards */
+  overflow: hidden; /* hides half cards */
   display: flex;
   align-items: center;
 }
@@ -107,7 +106,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 /* ===== CARD ===== */
 
 .team-card {
-  flex: 0 0 220px; /* fixed width for clean math */
+  flex: 0 0 220px;
   text-align: center;
 }
 
@@ -170,20 +169,23 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   background: #000;
   color: #fff;
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
-  z-index: 2;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
 }
 
 .team-nav.prev {
-  left: -52px;
+  left: -56px;
 }
 
 .team-nav.next {
-  right: -52px;
+  right: -56px;
 }
 
 /* ===== MOBILE BEHAVIOR ===== */
