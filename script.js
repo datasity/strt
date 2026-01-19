@@ -1,22 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===== MOBILE MENU ===== */
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.mobile-menu');
-  const close = document.querySelector('.close-menu');
-
-  if (toggle && menu && close) {
-    toggle.onclick = () => menu.classList.add('open');
-    close.onclick = () => menu.classList.remove('open');
-  }
-
-  /* ===== PROJECT FILTER + PAGINATION ===== */
   const buttons = document.querySelectorAll('.categories button');
   const cards = Array.from(document.querySelectorAll('.project-card'));
   const pagination = document.querySelector('.pagination');
-  const paginationBtns = pagination
-    ? pagination.querySelectorAll('button')
-    : [];
+  const paginationBtns = pagination ? pagination.querySelectorAll('button') : [];
 
   const ITEMS_PER_PAGE = 3;
   let currentPage = 1;
@@ -36,12 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderProjects() {
-    if (!cards.length) return;
-
     const filtered = getFilteredCards();
     const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
 
-    /* HIDE PAGINATION IF NOT NEEDED */
     if (pagination) {
       pagination.style.display =
         filtered.length > ITEMS_PER_PAGE ? 'flex' : 'none';
@@ -68,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* CATEGORY FILTER */
   buttons.forEach(btn => {
     btn.onclick = () => {
       buttons.forEach(b => b.classList.remove('active'));
@@ -80,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 
-  /* PAGINATION CONTROLS */
   paginationBtns.forEach(btn => {
     btn.onclick = () => {
       const filtered = getFilteredCards();
@@ -99,35 +81,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   renderProjects();
-
-  /* ===== TYPING EFFECT ===== */
-  const typingTexts = [
-    "Into Real-World Impact",
-    "Into Actionable Decisions",
-    "Into Practical Solutions"
-  ];
-
-  let textIndex = 0;
-  let charIndex = 0;
-  const typingEl = document.getElementById("typing-text");
-
-  function typeText() {
-    if (!typingEl) return;
-
-    if (charIndex < typingTexts[textIndex].length) {
-      typingEl.textContent += typingTexts[textIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(typeText, 80);
-    } else {
-      setTimeout(() => {
-        typingEl.textContent = "";
-        charIndex = 0;
-        textIndex = (textIndex + 1) % typingTexts.length;
-        typeText();
-      }, 1400);
-    }
-  }
-
-  if (typingEl) typeText();
-
 });
