@@ -82,12 +82,14 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   margin-bottom: 40px;
 }
 
-/* ===== GRID ===== */
+/* ===== GRID LAYOUT ===== */
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr)); /* FORCE 6 in a row */
   gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ===== CARD ===== */
@@ -100,8 +102,8 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-photo {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   margin: 0 auto 12px;
   border-radius: 50%;
   overflow: hidden;
@@ -137,29 +139,29 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-card h4 {
   margin: 8px 0 2px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .team-card span {
-  font-size: 14px;
+  font-size: 13px;
   color: #555;
 }
 
-/* ===== LOAD MORE ===== */
+/* ===== RESPONSIVE ===== */
 
-.team-load-more {
-  margin-top: 40px;
+@media (max-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* ===== MOBILE ===== */
-
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .team-grid {
     grid-template-columns: 1fr;
   }
