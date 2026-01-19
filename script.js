@@ -109,3 +109,22 @@ function typeText() {
 }
 
 document.addEventListener("DOMContentLoaded", typeText);
+
+
+
+
+/* ===== TEAM CAROUSEL ===== */
+const teamCarousel = document.querySelector('.team-carousel');
+const prevBtn = document.querySelector('.team-nav.prev');
+const nextBtn = document.querySelector('.team-nav.next');
+
+if (teamCarousel && prevBtn && nextBtn) {
+  prevBtn.onclick = () => {
+    teamCarousel.scrollBy({ left: -260, behavior: 'smooth' });
+  };
+
+  nextBtn.onclick = () => {
+    teamCarousel.scrollBy({ left: 260, behavior: 'smooth' });
+  };
+}
+
