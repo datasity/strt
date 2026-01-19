@@ -112,43 +112,30 @@ document.addEventListener("DOMContentLoaded", typeText);
 
 
 
-/* ===== TEAM CAROUSEL (ABOUT PAGE ONLY) ===== */
+/* ===== TEAM LOAD MORE ===== */
 
-const teamCarousel = document.querySelector('.team-carousel');
-const prevBtn = document.querySelector('.team-nav.prev');
-const nextBtn = document.querySelector('.team-nav.next');
+const loadBtn = document.getElementById('loadMoreTeam');
+const teamCards = document.querySelectorAll('.team-card');
 
-if (teamCarousel && prevBtn && nextBtn) {
-  const cards = teamCarousel.querySelectorAll('.team-card');
-  const cardWidth = 220 + 32; // card width + gap
-  const visibleCards = 4;
-  const maxIndex = cards.length - visibleCards;
+let visibleCount = 4;
 
-  let currentIndex = 0;
-
-  function updateCarousel() {
-    teamCarousel.style.transform =
-      `translateX(-${currentIndex * cardWidth}px)`;
-
-    // Disable arrows at ends
-    prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
-    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
+teamCards.forEach((card, index) => {
+  if (index >= visibleCount) {
+    card.style.display = 'none';
   }
+});
 
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
+loadBtn.addEventListener('click', () => {
+  visibleCount += 4;
+
+  teamCards.forEach((card, index) => {
+    if (index < visibleCount) {
+      card.style.display = 'block';
     }
   });
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < maxIndex) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
+  if (visibleCount >= teamCards.length) {
+    loadBtn.style.display = 'none';
+  }
+});
 
-  // Initial state
-  updateCarousel();
-}
