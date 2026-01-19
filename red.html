@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transportation Cost Stress | Analyst Den</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="container header-row">
     <a href="index.html">
@@ -31,6 +34,7 @@
   </div>
 </header>
 
+<!-- PROJECT PAGE -->
 <main class="ad-project">
 
   <!-- HERO -->
@@ -46,16 +50,27 @@
           <span>March – May 2026</span>
           <span>Field Research</span>
         </div>
-        <!-- CTA -->
-        <section class="content-section" style="text-align:center;">
-          <a href="p11.html" class="btn secondary">Become a Contributor</a>
-        </section>
 
-        
+        <!-- CTA BUTTONS -->
+        <div class="ad-project-cta">
+          <a href="p11.html" class="btn secondary">Become a Contributor</a>
+
+          <a href="assets/reports/transportation-abeokuta.pdf"
+             class="btn primary"
+             download>
+            Download Full Report (PDF)
+          </a>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="ad-project-countdown">
+          <span class="countdown-label">Next update starts in</span>
+          <span id="countdown-timer">Loading…</span>
+        </div>
       </div>
 
       <div class="ad-project-media">
-        <img src="assets/trans.png" >    <!-- IMAGE INPUT -->
+        <img src="assets/trans.png" alt="Transportation cost illustration">
       </div>
 
     </div>
