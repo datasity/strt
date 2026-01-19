@@ -129,6 +129,10 @@ if (teamCarousel && prevBtn && nextBtn) {
   function updateCarousel() {
     teamCarousel.style.transform =
       `translateX(-${currentIndex * cardWidth}px)`;
+
+    // Disable arrows at ends
+    prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
   }
 
   prevBtn.addEventListener('click', () => {
@@ -144,4 +148,7 @@ if (teamCarousel && prevBtn && nextBtn) {
       updateCarousel();
     }
   });
+
+  // Initial state
+  updateCarousel();
 }
