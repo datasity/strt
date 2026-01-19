@@ -92,23 +92,24 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 /* ===== TEAM GRID ===== */
 
 .team-grid {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 32px;
   justify-items: center;
+  justify-content: center;
   padding: 0 24px;
 }
 
-/* ===== CARD ===== */
+/* ===== TEAM CARD ===== */
 
 .team-card {
   text-align: center;
-  max-width: 200px;
+  max-width: 220px;
 }
 
-/* ===== PHOTO ===== */
+/* ===== TEAM PHOTO ===== */
 
 .team-photo {
   position: relative;
@@ -125,12 +126,12 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   object-fit: cover;
 }
 
-/* ===== HOVER ===== */
+/* ===== HOVER OVERLAY ===== */
 
 .team-hover {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.65);
   color: #fff;
   display: flex;
   align-items: center;
@@ -151,6 +152,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 .team-card h4 {
   margin: 8px 0 2px;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .team-card span {
@@ -160,14 +162,20 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 /* ===== RESPONSIVE ===== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
   }
 }
 
 @media (max-width: 768px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
   }
 }
