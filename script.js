@@ -20,9 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentFilter = 'all';
 
   function getFilteredCards() {
-    return cards.filter(card =>
-      currentFilter === 'all' || card.dataset.category === currentFilter
-    );
+    return cards.filter(card => {
+      if (currentFilter === 'all') return true;
+
+      if (!card.dataset.category) return false;
+
+      const categories = card.dataset.category
+        .toLowerCase()
+        .split(' ')
+        .map(c => c.trim());
+
+      return categories.includes(currentFilter);
+    });
   }
 
   function renderProjects() {
@@ -33,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentPage > totalPages) currentPage = totalPages || 1;
 
-    cards.forEach(card => (card.style.display = 'none'));
+    cards.forEach(card => {
+      card.style.display = 'none';
+    });
 
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
@@ -43,22 +54,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     paginationBtns.forEach(btn => btn.classList.remove('active'));
+
     paginationBtns.forEach(btn => {
-      if (btn.dataset.page == currentPage) btn.classList.add('active');
+      if (btn.dataset.page == currentPage) {
+        btn.classList.add('active');
+      }
     });
   }
 
+  /* CATEGORY FILTER */
   buttons.forEach(btn => {
     btn.onclick = () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      currentFilter = btn.dataset.filter;
+      currentFilter = btn.dataset.filter.toLowerCase();
       currentPage = 1;
       renderProjects();
     };
   });
 
+  /* PAGINATION */
   paginationBtns.forEach(btn => {
     btn.onclick = () => {
       const filtered = getFilteredCards();
