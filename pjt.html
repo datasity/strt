@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Analyst DEN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst DEN">
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#" class="active">Projects</a>
+      <a href="#">Process</a>
+      <a href="#">Publications</a>
+      <a href="#">Get Involved</a>
+    </nav>
+  </div>
+</header>
+
+<main class="projects-page">
+
+  <!-- ================= HEADER ================= -->
+  <section class="projects-header container">
+    <h1>Projects</h1>
+    <p class="subtitle">
+      Real world data projects designed for learning, collaboration, and impact.
+    </p>
+
+    <div class="project-stats">
+      <div>Total Projects: <strong>58</strong></div>
+      <div>Active Projects: <strong>12</strong></div>
+      <div>Completed Projects: <strong>32</strong></div>
+    </div>
+  </section>
+
+  <!-- ================= FILTER BAR ================= -->
+  <section class="projects-filters container">
+
+    <div class="filters-left">
+      <select>
+        <option>Project Status: All</option>
+        <option>Upcoming</option>
+        <option>Ongoing</option>
+        <option>Completed</option>
+      </select>
+
+      <select>
+        <option>Contributor Status: All</option>
+        <option>Accepting Contributors</option>
+        <option>Closed</option>
+      </select>
+
+      <select>
+        <option>Project Type: All</option>
+        <option>Research</option>
+        <option>Case Study</option>
+        <option>Survey</option>
+        <option>Dashboard</option>
+        <option>Report</option>
+      </select>
+
+      <select>
+        <option>Industry: All</option>
+        <option>Finance</option>
+        <option>Small Business</option>
+        <option>Public Sector</option>
+        <option>Economic Analysis</option>
+        <option>Education</option>
+      </select>
+    </div>
+
+    <div class="filters-right">
+      <input type="search" placeholder="Search projects…">
+      <select>
+        <option>Sort by: Date to be Commenced</option>
+        <option>Newest Projects</option>
+        <option>Oldest Projects</option>
+        <option>Recently Updated</option>
+      </select>
+      <button class="reset-btn">Reset Filters</button>
+    </div>
+
+  </section>
+
+  <!-- ================= PROJECT GRID ================= -->
+  <section class="projects-grid container">
+
+    <!-- CARD -->
+    <div class="project-card accepting">
+      <div class="card-image"></div>
+      <span class="status accepting">Accepting Contributors</span>
+      <h3>Market Trends Analysis</h3>
+      <p>Analysing recent market shifts and emerging trends.</p>
+      <div class="meta">
+        <span>Starts: May 5, 2024</span>
+        <span>Beginner</span>
+      </div>
+      <a class="btn join">Join Project</a>
+    </div>
+
+    <div class="project-card upcoming">
+      <div class="card-image"></div>
+      <span class="status upcoming">Upcoming</span>
+      <h3>Education Outcomes Study</h3>
+      <p>Evaluating student performance metrics.</p>
+      <div class="meta">
+        <span>Commencing: April 30, 2024</span>
+        <span>Intermediate</span>
+      </div>
+      <a class="btn view">View Project</a>
+    </div>
+
+    <div class="project-card completed">
+      <div class="card-image"></div>
+      <span class="status completed">Completed</span>
+      <h3>COVID-19 Impact Report</h3>
+      <p>Assessing the effects of the pandemic.</p>
+      <div class="meta">
+        <span>2 Months</span>
+        <span>Advanced</span>
+      </div>
+      <a class="btn view">View Project</a>
+    </div>
+
+    <div class="project-card ongoing">
+      <div class="card-image"></div>
+      <span class="status ongoing">Ongoing</span>
+      <h3>Small Business Insights</h3>
+      <p>Data analysis for local businesses.</p>
+      <div class="meta">
+        <span>In Progress</span>
+        <span>Intermediate</span>
+      </div>
+      <a class="btn view">View Project</a>
+    </div>
+
+    <div class="project-card accepting">
+      <div class="card-image"></div>
+      <span class="status accepting">Accepting Contributors</span>
+      <h3>Renewable Energy Survey</h3>
+      <p>Exploring opinions on renewable energy.</p>
+      <div class="meta">
+        <span>Open Now</span>
+        <span>Beginner</span>
+      </div>
+      <a class="btn join">Join Project</a>
+    </div>
+
+    <div class="project-card ongoing">
+      <div class="card-image"></div>
+      <span class="status ongoing">Ongoing</span>
+      <h3>Public Health Dashboard</h3>
+      <p>Visualizing health data trends.</p>
+      <div class="meta">
+        <span>Active</span>
+        <span>Advanced</span>
+      </div>
+      <a class="btn view">View Project</a>
+    </div>
+
+  </section>
+
+  <!-- ================= PAGINATION ================= -->
+  <section class="pagination-section">
+    <button>‹ Previous</button>
+    <button class="active">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>Next ›</button>
+  </section>
+
+  <!-- ================= TRUST SECTION ================= -->
+  <section class="projects-footer container">
+    <p>
+      These projects are built to simulate real world analysis, collaboration,
+      and reporting environments.
+    </p>
+    <ul>
+      <li><a href="#">How Projects Work</a></li>
+      <li><a href="#">Contribution Guidelines</a></li>
+      <li><a href="#">Portfolio Examples</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Analyst DEN by Datavasity</p>
+</footer>
+
+</body>
+</html>
