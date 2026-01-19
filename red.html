@@ -13,7 +13,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- FORCE WHITE CTA BUTTON -->
+  <!-- FORCE WHITE SECONDARY CTA -->
   <style>
     .ad-project-cta .btn.secondary {
       color: #ffffff;
@@ -57,10 +57,8 @@
           <span>Field Research</span>
         </div>
 
-        <!-- CTA BUTTONS -->
         <div class="ad-project-cta">
           <a href="p11.html" class="btn secondary">Become a Contributor</a>
-
           <a href="assets/reports/transportation-abeokuta.pdf"
              class="btn primary"
              download>
@@ -68,7 +66,6 @@
           </a>
         </div>
 
-        <!-- COUNTDOWN -->
         <div class="ad-project-countdown">
           <span>Next update starts in</span>
           <span id="countdown-timer">Loading…</span>
@@ -107,7 +104,6 @@
   <!-- RECIPIENTS + OBJECTIVES -->
   <section class="ad-project-section">
     <div class="ad-project-grid">
-
       <div>
         <h3>Primary Recipients</h3>
         <ul>
@@ -126,7 +122,6 @@
           <li>Document commuter coping strategies</li>
         </ol>
       </div>
-
     </div>
   </section>
 
@@ -213,6 +208,32 @@
   <p>© 2026 Analyst Den by Datavasity</p>
 </footer>
 
+<!-- CONTRIBUTORS TOGGLE SCRIPT (RESTORED) -->
+<script>
+  const teamGrid = document.querySelector('.team-grid');
+  const teamCards = document.querySelectorAll('.team-grid .team-card');
+
+  if (teamCards.length > 3) {
+    const btn = document.createElement('button');
+    btn.className = 'btn secondary';
+    btn.textContent = 'View all contributors';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'team-toggle';
+    wrap.appendChild(btn);
+
+    teamGrid.parentElement.appendChild(wrap);
+
+    btn.addEventListener('click', () => {
+      teamGrid.classList.toggle('show-all');
+      btn.textContent = teamGrid.classList.contains('show-all')
+        ? 'Show fewer contributors'
+        : 'View all contributors';
+    });
+  }
+</script>
+
+<!-- COUNTDOWN SCRIPT -->
 <script>
   function getNextFirstOfMonth() {
     const now = new Date();
