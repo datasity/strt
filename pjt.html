@@ -44,40 +44,61 @@
 
 <main>
 
-<section class="projects">
+<section class="projects projects-page">
   <div class="container">
 
     <h2>Explore Our Projects</h2>
+    <p>Real world data projects designed for learning, collaboration, and impact.</p>
 
-    <p>
-      Real world data projects designed for learning, collaboration, and impact.
-    </p>
-
-    <!-- FILTERS -->
-    <div class="categories">
-      <button class="active" data-filter="all">All</button>
-      <button data-filter="Education">Education</button>
-      <button data-filter="Transportation">Transportation</button>
-      <button data-filter="Health">Health</button>
-      <button data-filter="Environment">Environment</button>
-      <button data-filter="Governance">Governance</button>
+    <!-- CATEGORY FILTERS -->
+    <div class="categories projects-categories">
+      <button class="active" data-category-filter="all">All</button>
+      <button data-category-filter="Education">Education</button>
+      <button data-category-filter="Transportation">Transportation</button>
+      <button data-category-filter="Health">Health</button>
+      <button data-category-filter="Environment">Environment</button>
+      <button data-category-filter="Governance">Governance</button>
     </div>
 
-    <!-- EXTRA FILTER ROW -->
-    <div class="categories">
-      <button data-filter="upcoming">Upcoming</button>
-      <button data-filter="ongoing">Ongoing</button>
-      <button data-filter="completed">Completed</button>
-      <button data-filter="contributors">Accepting Contributors</button>
-      <button data-sort="newest">Newest First</button>
+    <!-- ADVANCED FILTER BAR -->
+    <div class="projects-controls">
+
+      <!-- STATUS CHECK BUTTONS -->
+      <div class="projects-status-filters">
+        <button data-status-filter="upcoming">Upcoming</button>
+        <button data-status-filter="ongoing">Ongoing</button>
+        <button data-status-filter="completed">Completed</button>
+      </div>
+
+      <!-- CONTRIBUTOR SWITCH -->
+      <div class="projects-switch">
+        <label class="projects-switch-label">
+          <input type="checkbox" id="filter-contributors">
+          <span>Accepting Contributors</span>
+        </label>
+      </div>
+
+      <!-- SORT DROPDOWN -->
+      <div class="projects-sort">
+        <select id="projects-sort-select">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+
     </div>
 
     <!-- PROJECT GRID -->
-    <div class="project-grid">
+    <div class="project-grid projects-grid">
 
-      <!-- PAGE 1 PROJECTS (1–9) -->
+      <!-- PROJECT 1 -->
+      <div class="project-card"
+           data-category="Transportation"
+           data-status="ongoing"
+           data-contributors="yes"
+           data-date="2026-03-01"
+           data-page="1">
 
-      <div class="project-card" data-category="Transportation" data-page="1">
         <div class="card-img" style="background-image:url('assets/trans.png');"></div>
         <h3>Transportation Cost Stress</h3>
         <ul>
@@ -89,7 +110,14 @@
         <a href="pp.html" class="read-more">Read more →</a>
       </div>
 
-      <div class="project-card" data-category="Environment" data-page="1">
+      <!-- PROJECT 2 -->
+      <div class="project-card"
+           data-category="Environment"
+           data-status="ongoing"
+           data-contributors="no"
+           data-date="2026-06-01"
+           data-page="1">
+
         <div class="card-img" style="background-image:url('assets/mark.png');"></div>
         <h3>Market Environmental Conditions</h3>
         <ul>
@@ -101,7 +129,14 @@
         <a href="pp.html" class="read-more">Read more →</a>
       </div>
 
-      <div class="project-card" data-category="Health" data-page="1">
+      <!-- PROJECT 3 -->
+      <div class="project-card"
+           data-category="Health"
+           data-status="ongoing"
+           data-contributors="yes"
+           data-date="2026-09-01"
+           data-page="1">
+
         <div class="card-img" style="background-image:url('assets/buss.png');"></div>
         <h3>SME Business Cashflow Stress</h3>
         <ul>
@@ -113,7 +148,14 @@
         <a href="pp.html" class="read-more">Read more →</a>
       </div>
 
-      <div class="project-card" data-category="Education" data-page="1">
+      <!-- COMING SOON TEMPLATE -->
+      <div class="project-card"
+           data-category="Education"
+           data-status="upcoming"
+           data-contributors="no"
+           data-date="2026-12-01"
+           data-page="1">
+
         <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
         <h3>Education Outcomes Study</h3>
         <ul>
@@ -125,70 +167,27 @@
         <span class="read-more">Coming Soon</span>
       </div>
 
-      <div class="project-card" data-category="Governance" data-page="1">
-        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
-        <h3>Local Governance Efficiency</h3>
-        <ul>
-          <li>Status: Coming Soon</li>
-          <li>Scope: Public Sector</li>
-          <li>Focus: Service Delivery</li>
-          <li>Output: Policy Brief</li>
-        </ul>
-        <span class="read-more">Coming Soon</span>
-      </div>
-
-      <div class="project-card" data-category="Environment" data-page="1">
-        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
-        <h3>Urban Waste Management</h3>
-        <ul>
-          <li>Status: Coming Soon</li>
-          <li>Focus: Sustainability</li>
-          <li>Area: Urban Markets</li>
-          <li>Output: Insights Report</li>
-        </ul>
-        <span class="read-more">Coming Soon</span>
-      </div>
-
-      <div class="project-card" data-category="Health" data-page="1">
-        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
-        <h3>Community Health Access</h3>
-        <ul>
-          <li>Status: Coming Soon</li>
-          <li>Focus: Health Equity</li>
-          <li>Data: Surveys</li>
-          <li>Output: Public Report</li>
-        </ul>
-        <span class="read-more">Coming Soon</span>
-      </div>
-
-      <div class="project-card" data-category="Transportation" data-page="1">
-        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
-        <h3>Public Transport Efficiency</h3>
-        <ul>
-          <li>Status: Coming Soon</li>
-          <li>Scope: Urban Mobility</li>
-          <li>Data: Field Observation</li>
-          <li>Output: Policy Note</li>
-        </ul>
-        <span class="read-more">Coming Soon</span>
-      </div>
-
-      <div class="project-card" data-category="Education" data-page="1">
-        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
-        <h3>Digital Skills Adoption</h3>
-        <ul>
-          <li>Status: Coming Soon</li>
-          <li>Focus: Workforce Skills</li>
-          <li>Method: Surveys</li>
-          <li>Output: Research Report</li>
-        </ul>
-        <span class="read-more">Coming Soon</span>
-      </div>
+      <!-- Duplicate coming soon cards up to 14 as needed -->
 
     </div>
 
     <!-- PAGINATION -->
-    <div class="pagination">
+    <div class="pagination projects-pagination">
       <button data-page="prev">‹</button>
       <button class="active" data-page="1">1</button>
-      <button data-page="2">2</
+      <button data-page="2">2</button>
+      <button data-page="next">›</button>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Analyst Den by Datavasity</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
