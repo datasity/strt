@@ -71,10 +71,12 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 .card-img{aspect-ratio:4/3;max-height:220px}
 }
 
-/* ===== TEAM SECTION ===== */
+/* =========================
+   TEAM SECTION
+========================= */
 
 .team-section {
-  margin: 100px 0;
+  margin: 80px 0 120px;
   text-align: center;
 }
 
@@ -82,34 +84,42 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   margin-bottom: 48px;
 }
 
-/* ===== FULL WIDTH BREAKOUT ===== */
+/* =========================
+   FULL WIDTH BREAKOUT
+========================= */
 
 .team-fullwidth {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
 
-/* ===== TEAM GRID ===== */
+/* =========================
+   TEAM GRID
+========================= */
 
 .team-grid {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   justify-items: center;
   justify-content: center;
   padding: 0 24px;
 }
 
-/* ===== TEAM CARD ===== */
+/* =========================
+   TEAM CARD
+========================= */
 
 .team-card {
   text-align: center;
   max-width: 220px;
 }
 
-/* ===== TEAM PHOTO ===== */
+/* =========================
+   TEAM PHOTO
+========================= */
 
 .team-photo {
   position: relative;
@@ -126,13 +136,15 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   object-fit: cover;
 }
 
-/* ===== HOVER OVERLAY ===== */
+/* =========================
+   HOVER OVERLAY
+========================= */
 
 .team-hover {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.65);
-  color: #fff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +159,9 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
   opacity: 1;
 }
 
-/* ===== TEXT ===== */
+/* =========================
+   TEXT
+========================= */
 
 .team-card h4 {
   margin: 8px 0 2px;
@@ -157,14 +171,16 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-card span {
   font-size: 14px;
-  color: #555;
+  color: #555555;
 }
 
-/* ===== RESPONSIVE ===== */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 1024px) {
   .team-grid {
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
