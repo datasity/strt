@@ -115,6 +115,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 .team-card {
   text-align: center;
+   outline: 2px solid red;
   max-width: 220px;
 }
 
