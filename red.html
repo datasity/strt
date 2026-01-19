@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transportation Cost Stress | Analyst Den</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- FORCE WHITE CTA BUTTON -->
+  <style>
+    .ad-project-cta .btn.secondary {
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+  </style>
 </head>
 
 <body>
@@ -33,6 +43,7 @@
 
 <main class="ad-project">
 
+  <!-- HERO -->
   <section class="ad-project-hero">
     <div class="ad-project-wrap">
 
@@ -46,6 +57,7 @@
           <span>Field Research</span>
         </div>
 
+        <!-- CTA BUTTONS -->
         <div class="ad-project-cta">
           <a href="p11.html" class="btn secondary">Become a Contributor</a>
 
@@ -56,6 +68,7 @@
           </a>
         </div>
 
+        <!-- COUNTDOWN -->
         <div class="ad-project-countdown">
           <span>Next update starts in</span>
           <span id="countdown-timer">Loading…</span>
@@ -69,6 +82,7 @@
     </div>
   </section>
 
+  <!-- OVERVIEW -->
   <section class="ad-project-section">
     <div class="ad-project-narrow">
       <h2>Project Overview</h2>
@@ -80,6 +94,7 @@
     </div>
   </section>
 
+  <!-- STUDY DETAILS -->
   <section class="ad-project-section ad-muted">
     <div class="ad-project-details">
       <div><strong>Location</strong><span>Ogun State, Nigeria</span></div>
@@ -89,8 +104,10 @@
     </div>
   </section>
 
+  <!-- RECIPIENTS + OBJECTIVES -->
   <section class="ad-project-section">
     <div class="ad-project-grid">
+
       <div>
         <h3>Primary Recipients</h3>
         <ul>
@@ -109,11 +126,13 @@
           <li>Document commuter coping strategies</li>
         </ol>
       </div>
+
     </div>
   </section>
 
 </main>
 
+<!-- CONTRIBUTORS -->
 <section class="team-section">
   <h2> Contributors </h2>
 
@@ -216,7 +235,7 @@
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m`;
+    countdownEl.textContent = days + 'd ' + hours + 'h ' + minutes + 'm';
   }
 
   updateCountdown();
