@@ -139,3 +139,37 @@ loadBtn.addEventListener('click', () => {
   }
 });
 
+<script>
+  function getNextFirstOfMonth() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+
+    // If today is the 1st, count to next month
+    return now.getDate() === 1
+      ? new Date(year, month + 1, 1)
+      : new Date(year, month + 1, 1);
+  }
+
+  const countdownEl = document.getElementById('countdown-timer');
+  const targetDate = getNextFirstOfMonth();
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      countdownEl.textContent = 'Starting today';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    countdownEl.textContent = `${days}d ${hours}h ${minutes}m`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+</script>
