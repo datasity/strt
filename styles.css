@@ -437,3 +437,63 @@ p, li, span {
   }
 }
 
+
+/* =========================
+   EDGE RENDERING SAFETY FIX
+========================= */
+
+.ad-project-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* isolate meta pills */
+.ad-project-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.ad-project-meta span {
+  line-height: 1.2;
+}
+
+/* isolate CTA buttons */
+.ad-project-cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* force buttons out of inline flow */
+.ad-project-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+
+/* isolate countdown */
+.ad-project-countdown {
+  display: block;
+  margin-top: 14px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+}
+
+.ad-project-countdown span {
+  display: inline-block;
+}
+
+/* Edge specific guard */
+@supports (-ms-ime-align: auto) {
+  .ad-project-text * {
+    background: transparent !important;
+  }
+}
+
