@@ -50,7 +50,7 @@
     <h2>Explore Our Projects</h2>
     <p>Real world data projects designed for learning, collaboration, and impact.</p>
 
-    <!-- CATEGORY FILTERS -->
+    <!-- ROW 1: PRIMARY CATEGORY PILLS -->
     <div class="categories projects-categories">
       <button class="active" data-category-filter="all">All</button>
       <button data-category-filter="Education">Education</button>
@@ -60,17 +60,15 @@
       <button data-category-filter="Governance">Governance</button>
     </div>
 
-    <!-- ADVANCED FILTER BAR -->
+    <!-- ROW 2 + 3: STATUS, SWITCH, SORT -->
     <div class="projects-controls">
 
-      <!-- STATUS CHECK BUTTONS -->
       <div class="projects-status-filters">
         <button data-status-filter="upcoming">Upcoming</button>
         <button data-status-filter="ongoing">Ongoing</button>
         <button data-status-filter="completed">Completed</button>
       </div>
 
-      <!-- CONTRIBUTOR SWITCH -->
       <div class="projects-switch">
         <label class="projects-switch-label">
           <input type="checkbox" id="filter-contributors">
@@ -78,7 +76,6 @@
         </label>
       </div>
 
-      <!-- SORT DROPDOWN -->
       <div class="projects-sort">
         <select id="projects-sort-select">
           <option value="newest">Newest First</option>
@@ -92,13 +89,7 @@
     <div class="project-grid projects-grid">
 
       <!-- PROJECT 1 -->
-      <div class="project-card"
-           data-category="Transportation"
-           data-status="ongoing"
-           data-contributors="yes"
-           data-date="2026-03-01"
-           data-page="1">
-
+      <div class="project-card" data-category="Transportation" data-status="ongoing" data-contributors="yes" data-date="2026-03-01" data-page="1">
         <div class="card-img" style="background-image:url('assets/trans.png');"></div>
         <h3>Transportation Cost Stress</h3>
         <ul>
@@ -111,13 +102,7 @@
       </div>
 
       <!-- PROJECT 2 -->
-      <div class="project-card"
-           data-category="Environment"
-           data-status="ongoing"
-           data-contributors="no"
-           data-date="2026-06-01"
-           data-page="1">
-
+      <div class="project-card" data-category="Environment" data-status="ongoing" data-contributors="no" data-date="2026-06-01" data-page="1">
         <div class="card-img" style="background-image:url('assets/mark.png');"></div>
         <h3>Market Environmental Conditions</h3>
         <ul>
@@ -130,13 +115,7 @@
       </div>
 
       <!-- PROJECT 3 -->
-      <div class="project-card"
-           data-category="Health"
-           data-status="ongoing"
-           data-contributors="yes"
-           data-date="2026-09-01"
-           data-page="1">
-
+      <div class="project-card" data-category="Health" data-status="ongoing" data-contributors="yes" data-date="2026-09-01" data-page="1">
         <div class="card-img" style="background-image:url('assets/buss.png');"></div>
         <h3>SME Business Cashflow Stress</h3>
         <ul>
@@ -148,26 +127,55 @@
         <a href="pp.html" class="read-more">Read more →</a>
       </div>
 
-      <!-- COMING SOON TEMPLATE -->
-      <div class="project-card"
-           data-category="Education"
-           data-status="upcoming"
-           data-contributors="no"
-           data-date="2026-12-01"
-           data-page="1">
-
+      <!-- PROJECTS 4–11: COMING SOON -->
+      <div class="project-card" data-category="Education" data-status="upcoming" data-contributors="no" data-date="2026-12-01" data-page="1">
         <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
         <h3>Education Outcomes Study</h3>
-        <ul>
-          <li>Status: Coming Soon</li>
-          <li>Focus: Learning Outcomes</li>
-          <li>Method: Surveys</li>
-          <li>Output: Research Report</li>
-        </ul>
+        <ul><li>Status: Coming Soon</li></ul>
         <span class="read-more">Coming Soon</span>
       </div>
 
-      <!-- Duplicate coming soon cards up to 14 as needed -->
+      <div class="project-card" data-category="Governance" data-status="upcoming" data-contributors="no" data-date="2027-01-01" data-page="1">
+        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
+        <h3>Local Governance Efficiency</h3>
+        <ul><li>Status: Coming Soon</li></ul>
+        <span class="read-more">Coming Soon</span>
+      </div>
+
+      <div class="project-card" data-category="Environment" data-status="upcoming" data-contributors="no" data-date="2027-02-01" data-page="1">
+        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
+        <h3>Urban Waste Management</h3>
+        <ul><li>Status: Coming Soon</li></ul>
+        <span class="read-more">Coming Soon</span>
+      </div>
+
+      <div class="project-card" data-category="Health" data-status="upcoming" data-contributors="no" data-date="2027-03-01" data-page="1">
+        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
+        <h3>Community Health Access</h3>
+        <ul><li>Status: Coming Soon</li></ul>
+        <span class="read-more">Coming Soon</span>
+      </div>
+
+      <div class="project-card" data-category="Transportation" data-status="upcoming" data-contributors="no" data-date="2027-04-01" data-page="1">
+        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
+        <h3>Public Transport Efficiency</h3>
+        <ul><li>Status: Coming Soon</li></ul>
+        <span class="read-more">Coming Soon</span>
+      </div>
+
+      <div class="project-card" data-category="Education" data-status="upcoming" data-contributors="no" data-date="2027-05-01" data-page="1">
+        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
+        <h3>Digital Skills Adoption</h3>
+        <ul><li>Status: Coming Soon</li></ul>
+        <span class="read-more">Coming Soon</span>
+      </div>
+
+      <div class="project-card" data-category="Governance" data-status="upcoming" data-contributors="no" data-date="2027-06-01" data-page="1">
+        <div class="card-img" style="background-image:url('assets/coming-soon.png');"></div>
+        <h3>Public Finance Transparency</h3>
+        <ul><li>Status: Coming Soon</li></ul>
+        <span class="read-more">Coming Soon</span>
+      </div>
 
     </div>
 
