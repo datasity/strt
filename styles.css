@@ -325,3 +325,113 @@ p, li, span {
 }
 
 
+/* =========================
+   ANALYST DEN PROJECT SCOPE
+========================= */
+
+.ad-project {
+  width: 100%;
+}
+
+/* HERO */
+.ad-project-hero {
+  background: #f8f9fb;
+  padding: 64px 0;
+}
+
+.ad-project-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.ad-project-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 12px;
+}
+
+.ad-project-subtitle {
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.ad-project-meta span {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-right: 8px;
+  font-size: 13px;
+  background: #fff;
+}
+
+/* IMAGE */
+.ad-project-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SECTIONS */
+.ad-project-section {
+  padding: 56px 0;
+}
+
+.ad-project-section.ad-muted {
+  background: #fafafa;
+}
+
+.ad-project-narrow {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* DETAILS GRID */
+.ad-project-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.ad-project-details strong {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}
+
+.ad-project-details span {
+  font-weight: 600;
+}
+
+/* CONTENT GRID */
+.ad-project-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .ad-project-wrap,
+  .ad-project-details,
+  .ad-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-project-hero {
+    padding: 48px 0;
+  }
+}
