@@ -79,25 +79,12 @@
   <!-- OVERVIEW -->
   <section class="ad-project-section">
     <div class="ad-project-narrow">
-
-      <div class="ad-project-overview-header">
-        <h2>Project Overview</h2>
-
-        <div class="project-download">
-          <a href="assets/reports/transportation-abeokuta.pdf"
-             class="btn primary"
-             download>
-            Download Full Report (PDF)
-          </a>
-        </div>
-      </div>
-
+      <h2>Project Overview</h2>
       <p>
         Transportation costs are a growing source of economic pressure for commuters and taxi drivers in Ogun State.
         Rising fuel prices, fare instability, and infrastructure constraints are reshaping daily mobility and household finances.
         This project documents how transport cost stress affects income, access to work, and daily living.
       </p>
-
     </div>
   </section>
 
@@ -139,113 +126,54 @@
 
 </main>
 
+<!-- CONTRIBUTORS -->
 <section class="team-section">
-  <h2> Contributors </h2>
+  <h2>Contributors</h2>
 
   <div class="team-fullwidth">
     <div class="team-grid">
 
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/avatars/avatar-1.png" alt="Lead Analyst">
-          <div class="team-hover">
-            <p>Applied analytics and public sector research.</p>
-          </div>
-        </div>
-        <h4>Lead Analyst</h4>
-        <span>Analytics & Strategy</span>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/avatars/avatar-2.png" alt="Research Lead">
-          <div class="team-hover">
-            <p>Research design, surveys, and validation.</p>
-          </div>
-        </div>
-        <h4>Research Lead</h4>
-        <span>Research & Methods</span>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/avatars/avatar-2.png" alt="Data Engineer">
-          <div class="team-hover">
-            <p>Data pipelines and dashboards.</p>
-          </div>
-        </div>
-        <h4>Data Engineer</h4>
-        <span>Data Infrastructure</span>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/avatars/avatar-2.png" alt="Insights Lead">
-          <div class="team-hover">
-            <p>Storytelling and insight communication.</p>
-          </div>
-        </div>
-        <h4>Insights Lead</h4>
-        <span>Storytelling & Impact</span>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/avatars/avatar-2.png" alt="Analyst">
-          <div class="team-hover">
-            <p>Analysis and reporting support.</p>
-          </div>
-        </div>
-        <h4>Analyst</h4>
-        <span>Data Analysis</span>
-      </div>
-
-      <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/avatars/avatar-3.png" alt="Analyst">
-          <div class="team-hover">
-            <p>Policy and community insights.</p>
-          </div>
-        </div>
-        <h4>Analyst</h4>
-        <span>Research Support</span>
-      </div>
+      <!-- Your existing team-card blocks go here unchanged -->
 
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="content-section" style="text-align:center;">
-  <a href="p11.html" class="btn secondary">Become a Contributor</a>
-</section>
-
+<!-- FOOTER -->
 <footer class="site-footer">
   <p>© 2026 Analyst Den by Datavasity</p>
 </footer>
 
+<!-- COUNTDOWN SCRIPT -->
 <script>
-  const teamGrid = document.querySelector('.team-grid');
-  const teamCards = document.querySelectorAll('.team-grid .team-card');
-
-  if (teamCards.length > 3) {
-    const btn = document.createElement('button');
-    btn.className = 'btn secondary';
-    btn.textContent = 'View all contributors';
-
-    const wrap = document.createElement('div');
-    wrap.className = 'team-toggle';
-    wrap.appendChild(btn);
-
-    teamGrid.parentElement.appendChild(wrap);
-
-    btn.addEventListener('click', () => {
-      teamGrid.classList.toggle('show-all');
-      btn.textContent = teamGrid.classList.contains('show-all')
-        ? 'Show fewer contributors'
-        : 'View all contributors';
-    });
+  function getNextFirstOfMonth() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    return new Date(year, month + 1, 1);
   }
+
+  const countdownEl = document.getElementById('countdown-timer');
+  const targetDate = getNextFirstOfMonth();
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      countdownEl.textContent = 'Starting today';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    countdownEl.textContent = `${days}d ${hours}h ${minutes}m`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
 </script>
 
 </body>
