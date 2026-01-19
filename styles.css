@@ -258,6 +258,48 @@ p, li, span {
   }
 }
 
+/* =========================
+   PROJECTS LAYOUT FIX
+========================= */
+
+.projects .container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure grid creates space before pagination */
+.project-grid {
+  margin-bottom: 48px;
+}
+
+/* Pagination must live on its own row */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* Pagination buttons */
+.pagination button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #000;
+  color: #fff;
+}
+
+
+
 
 /* =========================
    ANALYST DEN PROJECT PAGE
