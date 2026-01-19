@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===== PROJECT FILTER + PAGINATION ===== */
   const buttons = document.querySelectorAll('.categories button');
   const cards = Array.from(document.querySelectorAll('.project-card'));
-  const paginationBtns = document.querySelectorAll('.pagination button');
+  const pagination = document.querySelector('.pagination');
+  const paginationBtns = pagination
+    ? pagination.querySelectorAll('button')
+    : [];
 
   const ITEMS_PER_PAGE = 3;
   let currentPage = 1;
@@ -23,14 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return cards.filter(card => {
       if (currentFilter === 'all') return true;
 
-      if (!card.dataset.category) return false;
-
       const categories = card.dataset.category
-        .toLowerCase()
+        ?.toLowerCase()
         .split(' ')
         .map(c => c.trim());
 
-      return categories.includes(currentFilter);
+      return categories && categories.includes(currentFilter);
     });
   }
 
@@ -39,6 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const filtered = getFilteredCards();
     const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+
+    /* HIDE PAGINATION IF NOT NEEDED */
+    if (pagination) {
+      pagination.style.display =
+        filtered.length > ITEMS_PER_PAGE ? 'flex' : 'none';
+    }
 
     if (currentPage > totalPages) currentPage = totalPages || 1;
 
@@ -54,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     paginationBtns.forEach(btn => btn.classList.remove('active'));
-
     paginationBtns.forEach(btn => {
       if (btn.dataset.page == currentPage) {
         btn.classList.add('active');
@@ -74,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 
-  /* PAGINATION */
+  /* PAGINATION CONTROLS */
   paginationBtns.forEach(btn => {
     btn.onclick = () => {
       const filtered = getFilteredCards();
@@ -122,67 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (typingEl) {
-    typeText();
-  }
-
-  /* ===== TEAM LOAD MORE ===== */
-  const loadBtn = document.getElementById('loadMoreTeam');
-  const teamCards = document.querySelectorAll('.team-card');
-
-  if (loadBtn && teamCards.length) {
-    let visibleCount = 4;
-
-    teamCards.forEach((card, index) => {
-      if (index >= visibleCount) {
-        card.style.display = 'none';
-      }
-    });
-
-    loadBtn.addEventListener('click', () => {
-      visibleCount += 4;
-
-      teamCards.forEach((card, index) => {
-        if (index < visibleCount) {
-          card.style.display = 'block';
-        }
-      });
-
-      if (visibleCount >= teamCards.length) {
-        loadBtn.style.display = 'none';
-      }
-    });
-  }
-
-  /* ===== COUNTDOWN ===== */
-  const countdownEl = document.getElementById('countdown-timer');
-
-  function getNextFirstOfMonth() {
-    const now = new Date();
-    return new Date(now.getFullYear(), now.getMonth() + 1, 1);
-  }
-
-  if (countdownEl) {
-    const targetDate = getNextFirstOfMonth();
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-
-      if (diff <= 0) {
-        countdownEl.textContent = 'Starting today';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-      countdownEl.textContent = days + 'd ' + hours + 'h ' + minutes + 'm';
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
-  }
+  if (typingEl) typeText();
 
 });
