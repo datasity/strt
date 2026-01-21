@@ -598,3 +598,77 @@ p, li, span {
     background: transparent !important;
   }
 }
+
+
+/* =========================
+   PROJECTS FILTER UI FIX
+   MATCHES CURRENT HTML
+========================= */
+
+.projects-page .projects-controls{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin:24px 0 32px;
+  flex-wrap:wrap
+}
+
+.projects-page .projects-controls-left{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap
+}
+
+/* STATUS BUTTONS */
+.projects-page .projects-status-filters{
+  display:flex;
+  gap:8px
+}
+
+.projects-page .projects-status-filters button{
+  padding:8px 16px;
+  border-radius:6px;
+  border:1px solid #000;
+  background:#fff;
+  color:#000;
+  font-weight:600;
+  cursor:pointer
+}
+
+.projects-page .projects-status-filters button.active{
+  background:#000;
+  color:#fff
+}
+
+/* ACCEPTING CONTRIBUTORS */
+.projects-page .projects-switch-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:600;
+  cursor:pointer
+}
+
+.projects-page .projects-switch-label input{
+  width:16px;
+  height:16px
+}
+
+/* SORT DROPDOWN */
+.projects-page .projects-sort select{
+  padding:8px 14px;
+  border-radius:6px;
+  border:1px solid #000;
+  font-weight:600;
+  cursor:pointer
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .projects-page .projects-controls{
+    align-items:flex-start
+  }
+}
+
