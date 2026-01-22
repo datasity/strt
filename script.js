@@ -270,104 +270,69 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     TYPING EFFECT
+     CONTRIBUTORS PAGE LOGIC
+     FULLY ISOLATED
   ========================= */
 
-  const typingTexts = [
-    "Into Real-World Impact",
-    "Into Actionable Decisions",
-    "Into Practical Solutions"
-  ];
+  const contributorPage = document.querySelector('.contributor-page');
 
-  let textIndex = 0;
-  let charIndex = 0;
-  const typingEl = document.getElementById("typing-text");
+  if (contributorPage) {
 
-  function typeText() {
-    if (!typingEl) return;
+    const searchInput = document.getElementById('contributor-search');
+    const contributorCards = Array.from(
+      contributorPage.querySelectorAll('.contributor-card')
+    );
 
-    if (charIndex < typingTexts[textIndex].length) {
-      typingEl.textContent += typingTexts[textIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(typeText, 80);
-    } else {
-      setTimeout(() => {
-        typingEl.textContent = "";
-        charIndex = 0;
-        textIndex = (textIndex + 1) % typingTexts.length;
-        typeText();
-      }, 1400);
-    }
-  }
+    const sortSelect = document.getElementById('contributor-sort');
+    const grid = document.getElementById('contributorGrid');
 
-  if (typingEl) {
-    typeText();
-  }
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase().trim();
 
-  /* =========================
-     TEAM LOAD MORE
-  ========================= */
-
-  const loadBtn = document.getElementById('loadMoreTeam');
-  const teamCards = document.querySelectorAll('.team-card');
-
-  if (loadBtn && teamCards.length) {
-    let visibleCount = 4;
-
-    teamCards.forEach((card, index) => {
-      if (index >= visibleCount) {
-        card.style.display = 'none';
-      }
-    });
-
-    loadBtn.addEventListener('click', () => {
-      visibleCount += 4;
-
-      teamCards.forEach((card, index) => {
-        if (index < visibleCount) {
-          card.style.display = 'block';
-        }
+        contributorCards.forEach(card => {
+          const name = card.querySelector('h3').textContent.toLowerCase();
+          card.style.display = name.includes(query) ? 'block' : 'none';
+        });
       });
-
-      if (visibleCount >= teamCards.length) {
-        loadBtn.style.display = 'none';
-      }
-    });
-  }
-
-  /* =========================
-     COUNTDOWN TO FIRST OF MONTH
-  ========================= */
-
-  const countdownEl = document.getElementById('countdown-timer');
-
-  function getNextFirstOfMonth() {
-    const now = new Date();
-    return new Date(now.getFullYear(), now.getMonth() + 1, 1);
-  }
-
-  if (countdownEl) {
-    const targetDate = getNextFirstOfMonth();
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-
-      if (diff <= 0) {
-        countdownEl.textContent = 'Starting today';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-      countdownEl.textContent =
-        days + 'd ' + hours + 'h ' + minutes + 'm';
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
+    if (sortSelect && grid) {
+      sortSelect.onchange = () => {
+        const sorted = [...contributorCards].sort((a, b) => {
+          const d1 = new Date(a.dataset.date);
+          const d2 = new Date(b.dataset.date);
+          return sortSelect.value === 'newest' ? d2 - d1 : d1 - d2;
+        });
+
+        sorted.forEach(card => grid.appendChild(card));
+      };
+    }
+
+    /* =========================
+       CONTRIBUTOR OVERLAY
+    ========================= */
+
+    const overlay = document.getElementById('contributorOverlay');
+    const closeOverlay = document.getElementById('closeContributorOverlay');
+
+    if (overlay) {
+      setTimeout(() => {
+        overlay.classList.add('show');
+      }, 1200);
+
+      if (closeOverlay) {
+        closeOverlay.onclick = () => {
+          overlay.classList.remove('show');
+        };
+      }
+
+      overlay.onclick = e => {
+        if (e.target === overlay) {
+          overlay.classList.remove('show');
+        }
+      };
+    }
   }
 
 });
