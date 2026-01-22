@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const PROJECTS_PER_PAGE = 9;
     let projectsPageIndex = 1;
     let activeCategory = 'all';
-    let activeStatuses = [];
+    let activeStatuses = ['ongoing'];
     let onlyContributors = false;
     let sortOrder = 'newest';
 
