@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Analyst Den</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Base site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Under construction page only -->
+  <link rel="stylesheet" href="underc.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html">
+      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den">
+    </a>
+
+    <nav class="main-nav">
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="process.html">Process</a>
+      <a href="publications.html">Publications</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="process.html">Process</a>
+  <a href="publications.html">Publications</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main class="underc-page">
+
+  <section class="underc-hero">
+    <div class="container underc-wrap">
+
+      <div class="underc-text">
+        <h1>Hold Tight, We’re Building Something Meaningful</h1>
+
+        <p class="underc-subtitle">
+          The Projects page is currently under construction.
+          We are carefully designing a space for real world research,
+          collaboration, and contributor driven impact.
+        </p>
+
+        <p class="underc-note">
+          This page will launch soon with live projects,
+          contributor access, and public insight reports.
+        </p>
+      </div>
+
+      <div class="underc-visual">
+        <img src="assets/under-construction.png" alt="Under construction illustration">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="underc-notify">
+    <div class="container underc-notify-wrap">
+
+      <div class="underc-notify-text">
+        <h3>Get notified when projects go live</h3>
+        <p>
+          Leave your email and we’ll let you know once the Projects page is ready.
+        </p>
+      </div>
+
+      <form class="underc-form">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          required
+        >
+        <button type="submit">Notify Me</button>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Analyst Den by Datavasity</p>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  const close = document.querySelector('.close-menu');
+
+  if (toggle && menu && close) {
+    toggle.onclick = () => menu.classList.add('open');
+    close.onclick = () => menu.classList.remove('open');
+  }
+</script>
+
+</body>
+</html>
