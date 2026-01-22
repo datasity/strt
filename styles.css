@@ -824,143 +824,170 @@ p, li, span {
     align-items: flex-start;
   }
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contributors | Analyst Den</title>
+/* =========================
+   BASE ISOLATION
+========================= */
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+.contributors-page {
+  font-family: "Rubik", sans-serif;
+}
 
-  <link rel="stylesheet" href="contributors.css" />
-</head>
-<body>
+/* =========================
+   HERO
+========================= */
 
-<header class="site-header">
-  <div class="container header-row">
-    <a href="index.html">
-      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den Logo">
-    </a>
+.contributors-hero {
+  padding: 72px 0 48px;
+  background: #ffffff;
+  text-align: center;
+}
 
-    <nav class="main-nav">
-      <a href="about.html">About</a>
-      <a href="pjt.html">Projects</a>
-      <a href="contributors.html" class="active">Contributors</a>
-      <a href="uc.html">Process</a>
-      <a href="uc.html">Publications</a>
-      <a href="uc.html">Contact</a>
-    </nav>
+.contributors-hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
 
-    <button class="menu-toggle">☰</button>
-  </div>
-</header>
+.contributors-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #555;
+}
 
-<main class="contributors-page">
+/* =========================
+   CONTAINER
+========================= */
 
-  <section class="contributors-hero">
-    <div class="contributors-container">
-      <h1>Our Contributors</h1>
-      <p>
-        Analysts, researchers, engineers, and storytellers collaborating on real world data projects.
-      </p>
-    </div>
-  </section>
+.contributors-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  <section class="contributors-controls">
-    <div class="contributors-container contributors-controls-row">
+/* =========================
+   CONTROLS
+========================= */
 
-      <div class="contributors-search">
-        <input type="text" placeholder="Search contributors by name">
-      </div>
+.contributors-controls {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 24px 0;
+  margin-bottom: 40px;
+}
 
-      <div class="contributors-sort">
-        <select>
-          <option value="newest">Newest Joined</option>
-          <option value="oldest">Oldest Joined</option>
-        </select>
-      </div>
+.contributors-controls-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-    </div>
-  </section>
+.contributors-search input {
+  width: 340px;
+  max-width: 100%;
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  font-size: 14px;
+  font-weight: 500;
+}
 
-  <section class="contributors-list-section">
-    <div class="contributors-container">
+.contributors-sort select {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-      <div class="contributors-grid">
+/* =========================
+   CONTRIBUTORS GRID
+========================= */
 
-        <!-- CONTRIBUTOR 1 -->
-        <a href="contributor-detail.html" class="contributor-card">
-          <div class="contributor-avatar">
-            <img src="assets/avatars/avatar-1.png" alt="Contributor">
-          </div>
-          <h3>Lead Analyst</h3>
-          <span>Analytics & Strategy</span>
-          <small>Joined March 2026</small>
-        </a>
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  padding-bottom: 80px;
+}
 
-        <!-- CONTRIBUTOR 2 -->
-        <a href="contributor-detail.html" class="contributor-card">
-          <div class="contributor-avatar">
-            <img src="assets/avatars/avatar-2.png" alt="Contributor">
-          </div>
-          <h3>Research Lead</h3>
-          <span>Research & Methods</span>
-          <small>Joined April 2026</small>
-        </a>
+/* =========================
+   CONTRIBUTOR CARD
+========================= */
 
-        <!-- CONTRIBUTOR 3 -->
-        <a href="contributor-detail.html" class="contributor-card">
-          <div class="contributor-avatar">
-            <img src="assets/avatars/avatar-3.png" alt="Contributor">
-          </div>
-          <h3>Data Engineer</h3>
-          <span>Data Infrastructure</span>
-          <small>Joined May 2026</small>
-        </a>
+.contributor-card {
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.25s ease;
+}
 
-        <!-- CONTRIBUTOR 4 -->
-        <a href="contributor-detail.html" class="contributor-card">
-          <div class="contributor-avatar">
-            <img src="assets/avatars/avatar-4.png" alt="Contributor">
-          </div>
-          <h3>Insights Analyst</h3>
-          <span>Storytelling & Impact</span>
-          <small>Joined June 2026</small>
-        </a>
+.contributor-card:hover {
+  transform: translateY(-4px);
+}
 
-        <!-- CONTRIBUTOR 5 -->
-        <a href="contributor-detail.html" class="contributor-card">
-          <div class="contributor-avatar">
-            <img src="assets/avatars/avatar-5.png" alt="Contributor">
-          </div>
-          <h3>Policy Analyst</h3>
-          <span>Public Sector</span>
-          <small>Joined July 2026</small>
-        </a>
+.contributor-avatar {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #000;
+}
 
-        <!-- CONTRIBUTOR 6 -->
-        <a href="contributor-detail.html" class="contributor-card">
-          <div class="contributor-avatar">
-            <img src="assets/avatars/avatar-6.png" alt="Contributor">
-          </div>
-          <h3>Community Researcher</h3>
-          <span>Field Research</span>
-          <small>Joined August 2026</small>
-        </a>
+.contributor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-      </div>
+.contributor-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0 4px;
+}
 
-    </div>
-  </section>
+.contributor-card span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
 
-</main>
+.contributor-card small {
+  font-size: 13px;
+  color: #888;
+}
 
-<footer class="site-footer">
-  <p>© 2026 Analyst Den by Datavasity</p>
-</footer>
+/* =========================
+   RESPONSIVE
+========================= */
 
-</body>
-</html>
+@media (max-width: 1024px) {
+  .contributors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contributors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contributors-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contributors-search input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contributors-grid {
+    grid-template-columns: 1fr;
+  }
+}
