@@ -9,27 +9,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="contributor.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+<!-- =========================
+     HEADER (UNCHANGED GLOBAL)
+========================= -->
 <header class="site-header">
   <div class="container header-row">
     <a href="index.html">
-      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den">
+      <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den Logo">
     </a>
 
     <nav class="main-nav">
       <a href="about.html">About</a>
       <a href="pjt.html">Projects</a>
-      <a href="contributor.html" class="active">Contributors</a>
-      <a href="uc.html">Process</a>
-      <a href="uc.html">Publications</a>
-      <a href="uc.html">Contact</a>
+      <a href="contributors.html" class="active">Contributors</a>
+      <a href="process.html">Process</a>
+      <a href="publications.html">Publications</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
     </nav>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
   </div>
 </header>
 
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="about.html">About</a>
+  <a href="pjt.html">Projects</a>
+  <a href="contributors.html">Contributors</a>
+  <a href="process.html">Process</a>
+  <a href="publications.html">Publications</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- =========================
+     CONTRIBUTORS PAGE
+========================= -->
 <main class="contributor-page">
 
   <!-- HERO -->
@@ -37,23 +57,28 @@
     <div class="contributor-wrap">
       <h1>Our Contributors</h1>
       <p>
-        Analysts, researchers, engineers, and collaborators working on real world data projects.
+        Analysts, researchers, engineers, and storytellers collaborating on real world data projects
+        across public policy, business, and social impact.
       </p>
     </div>
   </section>
 
-  <!-- SEARCH + SORT -->
+  <!-- CONTROLS -->
   <section class="contributor-controls">
     <div class="contributor-wrap contributor-controls-row">
 
       <div class="contributor-search">
-        <input type="text" placeholder="Search contributors by name">
+        <input
+          type="text"
+          placeholder="Search contributors by name…"
+          aria-label="Search contributors"
+        />
       </div>
 
       <div class="contributor-sort">
-        <select>
-          <option value="newest">Newest Joined</option>
-          <option value="oldest">Oldest Joined</option>
+        <select aria-label="Sort contributors">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
         </select>
       </div>
 
@@ -66,64 +91,84 @@
 
       <div class="contributor-grid">
 
-        <!-- CARD 1 -->
+        <!-- CONTRIBUTOR 1 -->
         <a href="contributor-detail.html" class="contributor-card">
           <div class="contributor-avatar">
             <img src="assets/avatars/avatar-1.png" alt="Contributor">
           </div>
-          <h3>Lead Analyst</h3>
-          <span>Analytics & Strategy</span>
+          <h3>Samuel Adeyemi</h3>
+          <span>Lead Analyst</span>
           <small>Joined March 2026</small>
         </a>
 
-        <!-- CARD 2 -->
+        <!-- CONTRIBUTOR 2 -->
         <a href="contributor-detail.html" class="contributor-card">
           <div class="contributor-avatar">
             <img src="assets/avatars/avatar-2.png" alt="Contributor">
           </div>
-          <h3>Research Lead</h3>
-          <span>Research & Methods</span>
+          <h3>Amina Bello</h3>
+          <span>Research Lead</span>
           <small>Joined April 2026</small>
         </a>
 
-        <!-- CARD 3 -->
+        <!-- CONTRIBUTOR 3 -->
         <a href="contributor-detail.html" class="contributor-card">
           <div class="contributor-avatar">
             <img src="assets/avatars/avatar-3.png" alt="Contributor">
           </div>
-          <h3>Data Engineer</h3>
-          <span>Data Infrastructure</span>
+          <h3>David Okonkwo</h3>
+          <span>Data Engineer</span>
           <small>Joined May 2026</small>
         </a>
 
-        <!-- CARD 4 -->
+        <!-- CONTRIBUTOR 4 -->
         <a href="contributor-detail.html" class="contributor-card">
           <div class="contributor-avatar">
             <img src="assets/avatars/avatar-4.png" alt="Contributor">
           </div>
-          <h3>Insights Analyst</h3>
-          <span>Storytelling & Impact</span>
-          <small>Joined June 2026</small>
+          <h3>Zainab Musa</h3>
+          <span>Insights Analyst</span>
+          <small>Joined May 2026</small>
         </a>
 
-        <!-- CARD 5 -->
+        <!-- CONTRIBUTOR 5 -->
         <a href="contributor-detail.html" class="contributor-card">
           <div class="contributor-avatar">
             <img src="assets/avatars/avatar-5.png" alt="Contributor">
           </div>
-          <h3>Policy Analyst</h3>
-          <span>Public Sector</span>
-          <small>Joined July 2026</small>
+          <h3>Michael Johnson</h3>
+          <span>Policy Researcher</span>
+          <small>Joined June 2026</small>
         </a>
 
-        <!-- CARD 6 -->
+        <!-- CONTRIBUTOR 6 -->
         <a href="contributor-detail.html" class="contributor-card">
           <div class="contributor-avatar">
             <img src="assets/avatars/avatar-6.png" alt="Contributor">
           </div>
-          <h3>Community Researcher</h3>
-          <span>Field Research</span>
-          <small>Joined August 2026</small>
+          <h3>Fatima Lawal</h3>
+          <span>Community Analyst</span>
+          <small>Joined June 2026</small>
+        </a>
+
+        <!-- CONTRIBUTOR 7 -->
+        <a href="contributor-detail.html" class="contributor-card">
+          <div class="contributor-avatar">
+            <img src="assets/avatars/avatar-7.png" alt="Contributor">
+          </div>
+          <h3>Daniel Smith</h3>
+          <span>Business Analyst</span>
+          <small>Joined July 2026</small>
+        </a>
+
+        <!-- CONTRIBUTOR 8 -->
+        <a href="contributor-detail.html" class="contributor-card">
+          <div class="contributor-avatar">
+            <img src="assets/avatars/avatar-8.png" alt="Contributor">
+          </div>
+          <h3>Grace Nwoye</h3>
+          <span>Data Storyteller</span>
+          <small>Joined July 2026</small>
         </a>
 
       </div>
@@ -133,9 +178,13 @@
 
 </main>
 
+<!-- =========================
+     FOOTER
+========================= -->
 <footer class="site-footer">
   <p>© 2026 Analyst Den by Datavasity</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
