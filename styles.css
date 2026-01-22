@@ -672,3 +672,155 @@ p, li, span {
   }
 }
 
+/* =========================
+   UNDER CONSTRUCTION PAGE
+   Scoped to .underc-page
+========================= */
+
+.underc-page {
+  width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.underc-hero {
+  padding: 80px 0 64px;
+  background: #ffffff;
+}
+
+.underc-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.underc-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 20px;
+}
+
+.underc-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.underc-note {
+  font-size: 15px;
+  color: #555;
+  max-width: 520px;
+}
+
+/* =========================
+   VISUAL
+========================= */
+
+.underc-visual {
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.underc-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(0.2);
+  animation: underc-float 6s ease-in-out infinite;
+}
+
+@keyframes underc-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* =========================
+   NOTIFY SECTION
+========================= */
+
+.underc-notify {
+  background: #fafafa;
+  border-top: 1px solid #e5e5e5;
+  padding: 48px 0;
+}
+
+.underc-notify-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.underc-notify-text h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.underc-notify-text p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.underc-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.underc-form input {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 240px;
+  font-size: 14px;
+}
+
+.underc-form button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.underc-form button:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .underc-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .underc-visual {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .underc-hero {
+    padding: 56px 0;
+  }
+
+  .underc-notify-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
